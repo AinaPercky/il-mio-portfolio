@@ -56,18 +56,18 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative hidden lg:block"
         >
-          <div className="relative w-full aspect-square max-w-[500px] ml-auto">
-            {/* The circular creative backdrop seen in modern layouts */}
-            <div className="absolute inset-0 bg-brand-main rounded-full scale-[0.85] translate-x-4 translate-y-4 shadow-2xl" />
-            <div className="absolute inset-0 bg-brand-dark rounded-full scale-[0.85] -translate-x-4 -translate-y-4" />
-            <div className="absolute inset-0 rounded-full border-2 border-brand-yellow scale-[0.95] border-dashed animate-[spin_20s_linear_infinite]" />
-            
+          <div className="relative w-full aspect-[4/5] max-w-[430px] ml-auto">
+            {/* Portrait-oriented frame: it follows the source image ratio instead of forcing a square crop. */}
+            <div className="absolute inset-[3%] bg-brand-main rounded-[42%] rotate-3 shadow-2xl" />
+            <div className="absolute inset-[3%] bg-brand-dark rounded-[42%] -rotate-3 shadow-xl" />
+            <div className="absolute inset-0 rounded-[42%] border-2 border-brand-yellow border-dashed animate-[spin_20s_linear_infinite]" />
+
             {/* Profile Image */}
-            <div className="absolute inset-0 m-auto w-3/4 h-3/4 bg-brand-light rounded-full shadow-2xl overflow-hidden border-4 border-white z-10">
-              <img 
-                src="/Percky.png" 
-                alt="RAMANOARA Percky" 
-                className="w-full h-full object-cover" 
+            <div className="absolute inset-[7%] flex items-center justify-center bg-[#3b2418] rounded-[36%] shadow-2xl overflow-hidden border-4 border-white z-10">
+              <img
+                src="/Percky.png"
+                alt="RAMANOARA Percky"
+                className="w-full h-full object-contain object-center"
               />
             </div>
           </div>
