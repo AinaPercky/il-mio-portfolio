@@ -4,17 +4,45 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { clsx } from 'clsx';
 
-const flags = {
-  fr: '🇫🇷',
-  it: '🇮🇹',
-  en: '🇬🇧',
-} as const;
+type SupportedLanguage = 'fr' | 'it' | 'en';
 
-const languageNames = {
-  fr: 'Français',
-  it: 'Italiano',
-  en: 'English',
-} as const;
+const languages: Array<{ code: SupportedLanguage; name: string }> = [
+  { code: 'fr', name: 'Français' },
+  { code: 'it', name: 'Italiano' },
+  { code: 'en', name: 'English' },
+];
+
+const FlagIcon = ({ code }: { code: SupportedLanguage }) => {
+  if (code === 'fr') {
+    return (
+      <svg viewBox="0 0 30 20" aria-hidden="true" className="h-4 w-6 rounded-[2px] shadow-sm">
+        <rect width="10" height="20" fill="#0055A4" />
+        <rect x="10" width="10" height="20" fill="#FFFFFF" />
+        <rect x="20" width="10" height="20" fill="#EF4135" />
+      </svg>
+    );
+  }
+
+  if (code === 'it') {
+    return (
+      <svg viewBox="0 0 30 20" aria-hidden="true" className="h-4 w-6 rounded-[2px] shadow-sm">
+        <rect width="10" height="20" fill="#009246" />
+        <rect x="10" width="10" height="20" fill="#FFFFFF" />
+        <rect x="20" width="10" height="20" fill="#CE2B37" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 60 40" aria-hidden="true" className="h-4 w-6 rounded-[2px] shadow-sm">
+      <rect width="60" height="40" fill="#012169" />
+      <path d="M0 0 60 40M60 0 0 40" stroke="#FFFFFF" strokeWidth="9" />
+      <path d="M0 0 60 40M60 0 0 40" stroke="#C8102E" strokeWidth="4" />
+      <path d="M30 0V40M0 20H60" stroke="#FFFFFF" strokeWidth="14" />
+      <path d="M30 0V40M0 20H60" stroke="#C8102E" strokeWidth="8" />
+    </svg>
+  );
+};
 
 export const Navbar = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -65,22 +93,22 @@ export const Navbar = () => {
         <div className="flex items-center space-x-4 md:space-x-8">
           {/* Language Selector */}
           <div className="flex items-center gap-1" aria-label="Choisir la langue">
-            {(Object.keys(flags) as Array<keyof typeof flags>).map((lang) => (
+            {languages.map(({ code, name }) => (
               <button
-                key={lang}
+                key={code}
                 type="button"
-                onClick={() => setLanguage(lang)}
+                onClick={() => setLanguage(code)}
                 className={clsx(
                   'flex h-9 w-9 items-center justify-center rounded-full text-xl transition-all',
-                  language === lang
+                  language === code
                     ? 'bg-brand-main/15 ring-2 ring-brand-main scale-105'
                     : 'opacity-60 hover:bg-gray-100 hover:opacity-100'
                 )}
-                aria-label={`Afficher le site en ${languageNames[lang]}`}
-                aria-pressed={language === lang}
-                title={languageNames[lang]}
+                aria-label={`Afficher le site en ${name}`}
+                aria-pressed={language === code}
+                title={name}
               >
-                {flags[lang]}
+                <FlagIcon code={code} />
               </button>
             ))}
           </div>

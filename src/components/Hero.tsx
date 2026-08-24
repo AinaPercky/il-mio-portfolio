@@ -53,14 +53,14 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative hidden lg:block"
         >
-          <div className="relative w-full aspect-[4/5] max-w-[430px] ml-auto">
+          <div className="relative w-full aspect-[635/932] max-w-[390px] ml-auto">
             {/* Portrait-oriented frame: it follows the source image ratio instead of forcing a square crop. */}
-            <div className="absolute inset-[3%] bg-brand-main rounded-[42%] rotate-3 shadow-2xl" />
-            <div className="absolute inset-[3%] bg-brand-dark rounded-[42%] -rotate-3 shadow-xl" />
+            <div className="absolute inset-[3%] bg-[#27180f] rounded-[42%] rotate-3 shadow-2xl" />
+            <div className="absolute inset-[3%] bg-[#27180f] rounded-[42%] -rotate-3 shadow-xl" />
             <div className="absolute inset-0 rounded-[42%] border-2 border-brand-yellow border-dashed animate-[spin_20s_linear_infinite]" />
 
             {/* Profile Image */}
-            <div className="absolute inset-[7%] flex items-center justify-center bg-[#27180f] rounded-[36%] shadow-2xl overflow-hidden border-4 border-white z-10">
+            <div className="absolute inset-[7%] flex items-center justify-center bg-[#150a04] rounded-[36%] shadow-2xl overflow-hidden border-4 border-white z-10">
               <img
                 src="/Percky.png"
                 alt="RAMANOARA Percky"
