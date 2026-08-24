@@ -5,17 +5,21 @@ import { motion, AnimatePresence } from 'motion/react';
 import { clsx } from 'clsx';
 
 const flags = {
-  mg: '🇲🇬',
   fr: '🇫🇷',
-  en: '🇬🇧',
   it: '🇮🇹',
-};
+  en: '🇬🇧',
+} as const;
+
+const languageNames = {
+  fr: 'Français',
+  it: 'Italiano',
+  en: 'English',
+} as const;
 
 export const Navbar = () => {
   const { language, setLanguage, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [langMenuOpen, setLangMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,44 +64,25 @@ export const Navbar = () => {
         {/* Right Section: Language Selector & Mobile Toggle */}
         <div className="flex items-center space-x-4 md:space-x-8">
           {/* Language Selector */}
-          <div className="relative">
-            <button
-              onClick={() => setLangMenuOpen(!langMenuOpen)}
-              className="flex items-center justify-center text-2xl hover:opacity-80 transition-opacity"
-              aria-label="Select language"
-            >
-              {flags[language]}
-            </button>
-            
-            <AnimatePresence>
-              {langMenuOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  className="absolute right-0 mt-2 py-2 w-40 bg-white rounded-xl shadow-lg border border-gray-100 flex flex-col"
-                >
-                  {(Object.keys(flags) as Array<keyof typeof flags>).map((lang) => (
-                    <button
-                      key={lang}
-                      onClick={() => {
-                        setLanguage(lang);
-                        setLangMenuOpen(false);
-                      }}
-                      className={clsx(
-                        'flex items-center px-4 py-2 hover:bg-gray-50 transition-colors',
-                        language === lang && 'bg-brand-light/20 font-bold'
-                      )}
-                    >
-                      <span className="text-xl mr-3">{flags[lang]}</span>
-                      <span className="uppercase text-sm text-brand-dark font-medium">
-                        {lang === 'fr' ? 'Français' : lang === 'en' ? 'English' : lang === 'it' ? 'Italiano' : 'Malagasy'}
-                      </span>
-                    </button>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
+          <div className="flex items-center gap-1" aria-label="Choisir la langue">
+            {(Object.keys(flags) as Array<keyof typeof flags>).map((lang) => (
+              <button
+                key={lang}
+                type="button"
+                onClick={() => setLanguage(lang)}
+                className={clsx(
+                  'flex h-9 w-9 items-center justify-center rounded-full text-xl transition-all',
+                  language === lang
+                    ? 'bg-brand-main/15 ring-2 ring-brand-main scale-105'
+                    : 'opacity-60 hover:bg-gray-100 hover:opacity-100'
+                )}
+                aria-label={`Afficher le site en ${languageNames[lang]}`}
+                aria-pressed={language === lang}
+                title={languageNames[lang]}
+              >
+                {flags[lang]}
+              </button>
+            ))}
           </div>
 
           {/* Mobile Toggle */}

@@ -23,7 +23,7 @@ export const Services = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-sm font-bold tracking-wider text-brand-main uppercase mb-3">
-              Expertise
+              {t.labels.expertise}
             </h2>
             <h3 className="text-3xl lg:text-4xl font-bold text-brand-dark">
               {t.services.title}

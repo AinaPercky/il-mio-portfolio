@@ -14,11 +14,11 @@ export const Contact = () => {
     event.preventDefault();
 
     const subject = name.trim()
-      ? `Message depuis le portfolio — ${name.trim()}`
-      : 'Message depuis le portfolio';
+      ? `${t.labels.mailSubject} — ${name.trim()}`
+      : t.labels.mailSubject;
     const body = [
-      `Nom : ${name.trim()}`,
-      `Email : ${email.trim()}`,
+      `${t.labels.mailName} : ${name.trim()}`,
+      `${t.labels.mailEmail} : ${email.trim()}`,
       '',
       message.trim(),
     ].join('\n');
@@ -79,8 +79,9 @@ export const Contact = () => {
               
               <form className="relative z-10 space-y-6" onSubmit={handleSubmit}>
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">Nom</label>
+                  <label htmlFor="contact-name" className="block text-sm font-medium text-gray-300 mb-2">{t.labels.name}</label>
                   <input
+                    id="contact-name"
                     type="text"
                     name="name"
                     value={name}
@@ -88,12 +89,13 @@ export const Contact = () => {
                     autoComplete="name"
                     required
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-brand-main focus:ring-1 focus:ring-brand-main transition-all"
-                    placeholder="Votre nom"
+                    placeholder={t.labels.namePlaceholder}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                  <label htmlFor="contact-email" className="block text-sm font-medium text-gray-300 mb-2">{t.labels.email}</label>
                   <input
+                    id="contact-email"
                     type="email"
                     name="email"
                     value={email}
@@ -101,26 +103,27 @@ export const Contact = () => {
                     autoComplete="email"
                     required
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-brand-main focus:ring-1 focus:ring-brand-main transition-all"
-                    placeholder="votre@email.com"
+                    placeholder={t.labels.emailPlaceholder}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                  <label htmlFor="contact-message" className="block text-sm font-medium text-gray-300 mb-2">{t.labels.message}</label>
                   <textarea
+                    id="contact-message"
                     rows={4}
                     name="message"
                     value={message}
                     onChange={(event) => setMessage(event.target.value)}
                     required
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-brand-main focus:ring-1 focus:ring-brand-main transition-all resize-none"
-                    placeholder="Comment puis-je vous aider ?"
+                    placeholder={t.labels.messagePlaceholder}
                   />
                 </div>
                 <button
                   type="submit"
                   className="w-full bg-brand-orange hover:bg-[#e67a00] text-white font-bold py-4 rounded-xl transition-colors shadow-lg"
                 >
-                  Envoyer
+                  {t.labels.send}
                 </button>
               </form>
             </motion.div>

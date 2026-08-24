@@ -20,11 +20,8 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-block px-4 py-2 rounded-full bg-brand-main/10 text-brand-main font-semibold text-sm mb-6">
-            {t.hero.shortHook}
-          </div>
           <h1 className="text-5xl lg:text-7xl font-extrabold text-brand-dark mb-6 leading-[1.1]">
-            <span className="block">Salut, je suis</span>
+            <span className="block">{t.hero.greeting}</span>
             <span className="text-brand-main">{t.hero.title}</span>
           </h1>
           <h2 className="text-xl lg:text-2xl font-medium text-gray-600 mb-8 max-w-2xl">
@@ -63,7 +60,7 @@ export const Hero = () => {
             <div className="absolute inset-0 rounded-[42%] border-2 border-brand-yellow border-dashed animate-[spin_20s_linear_infinite]" />
 
             {/* Profile Image */}
-            <div className="absolute inset-[7%] flex items-center justify-center bg-[#3b2418] rounded-[36%] shadow-2xl overflow-hidden border-4 border-white z-10">
+            <div className="absolute inset-[7%] flex items-center justify-center bg-[#27180f] rounded-[36%] shadow-2xl overflow-hidden border-4 border-white z-10">
               <img
                 src="/Percky.png"
                 alt="RAMANOARA Percky"

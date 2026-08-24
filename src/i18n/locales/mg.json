@@ -9,8 +9,8 @@
     "title": "RAMANOARA Percky",
     "subtitle": "Mpanamboatra tranonkala Fullstack | Manampahaizana Lean Management & Fitantanana tetikasa",
     "hook": "Je construis des applications web solides et je pilote des projets avec la rigueur des méthodes Lean — deux façons différentes d'atteindre le même objectif : un résultat qui fonctionne, sans gaspillage.",
-    "shortHook": "Mpanamboatra Fullstack. Saina Lean. Manoratra fehezan-dalàna aho ary mandamina ny lalana hahatongavana amin'izany.",
-    "cta": "Hifandray amiko"
+    "cta": "Hifandray amiko",
+    "greeting": "Salut, je suis"
   },
   "about": {
     "title": "À propos",
@@ -50,8 +50,7 @@
           "PHP",
           "MySQL",
           "Git"
-        ],
-        "link": "digidoc.ma"
+        ]
       },
       {
         "title": "Evisa",
@@ -172,5 +171,22 @@
     "email": "ainapercky@gmail.com",
     "phone": "032 96 489 54",
     "location": "Antananarivo, Madagascar"
+  },
+  "labels": {
+    "expertise": "Expertise",
+    "softSkills": "Soft Skills",
+    "context": "Contexte :",
+    "role": "Mon rôle :",
+    "result": "Résultat:",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "namePlaceholder": "Votre nom",
+    "messagePlaceholder": "Comment puis-je vous aider ?",
+    "send": "Envoyer",
+    "mailSubject": "Message depuis le portfolio",
+    "mailName": "Nom",
+    "mailEmail": "Email",
+    "emailPlaceholder": "votre@email.com"
   }
 }

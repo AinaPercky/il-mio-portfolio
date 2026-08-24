@@ -58,15 +58,15 @@ export const Projects = () => {
               
               <div className="space-y-4 mb-8">
                 <div>
-                  <span className="text-brand-light font-medium text-sm">Contexte :</span>
+                  <span className="text-brand-light font-medium text-sm">{t.labels.context}</span>
                   <p className="text-gray-300 mt-1">{project.context}</p>
                 </div>
                 <div>
-                  <span className="text-brand-light font-medium text-sm">Mon rôle :</span>
+                  <span className="text-brand-light font-medium text-sm">{t.labels.role}</span>
                   <p className="text-gray-300 mt-1">{project.role}</p>
                 </div>
                 <div>
-                  <span className="text-brand-light font-medium text-sm">Résultat :</span>
+                  <span className="text-brand-light font-medium text-sm">{t.labels.result}</span>
                   <p className="text-gray-300 mt-1">{project.result}</p>
                 </div>
               </div>

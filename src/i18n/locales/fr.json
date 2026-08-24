@@ -9,8 +9,8 @@
     "title": "RAMANOARA Percky",
     "subtitle": "Développeur Web Fullstack | Spécialiste Lean Management & Gestion de projet",
     "hook": "Je construis des applications web solides et je pilote des projets avec la rigueur des méthodes Lean — deux façons différentes d'atteindre le même objectif : un résultat qui fonctionne, sans gaspillage.",
-    "shortHook": "Développeur fullstack. Esprit Lean. Je code des solutions, j'organise le chemin pour y arriver.",
-    "cta": "Me contacter"
+    "cta": "Me contacter",
+    "greeting": "Salut, je suis"
   },
   "about": {
     "title": "À propos",
@@ -40,7 +40,7 @@
       {
         "title": "Digidoc",
         "context": "Plateforme marocaine de gestion de documents administratifs.",
-        "role": "Optimisation des performances, correction de bugs, intégration multilingue, développement de l'interface et de la partie admin.",
+        "role": "Optimisation des performances, correction de bugs, intégration multilingue, développement de l’interface et de la partie admin.",
         "result": "Une plateforme plus rapide et plus fiable, accessible à un public multilingue.",
         "stack": [
           "HTML",
@@ -50,13 +50,12 @@
           "PHP",
           "MySQL",
           "Git"
-        ],
-        "link": "digidoc.ma"
+        ]
       },
       {
         "title": "Evisa",
         "context": "Réseau de plateformes pour demander un visa en ligne sur plusieurs pays.",
-        "role": "Optimisation de performance, interfaces mobiles, formulaires, intégration des paiements, gestion de serveurs.",
+        "role": "Optimisation des performances, interfaces mobiles, formulaires, intégration des paiements, gestion de serveurs.",
         "result": "Parcours de demande de visa fluides, avec paiement en ligne intégré.",
         "stack": [
           "HTML",
@@ -71,9 +70,9 @@
       },
       {
         "title": "MiharyKet",
-        "context": "Application pour connecter les acteurs d'une coopérative agricole, de zéro.",
+        "context": "Application pour connecter les acteurs d’une coopérative agricole, de zéro.",
         "role": "Conception UML, développement agile, interface et backend, mise en place de triggers.",
-        "result": "Application fonctionnelle livrée de la conception jusqu'au déploiement.",
+        "result": "Application fonctionnelle livrée de la conception jusqu’au déploiement.",
         "stack": [
           "React",
           "Bootstrap",
@@ -172,5 +171,22 @@
     "email": "ainapercky@gmail.com",
     "phone": "032 96 489 54",
     "location": "Antananarivo, Madagascar"
+  },
+  "labels": {
+    "expertise": "Expertise",
+    "softSkills": "Soft Skills",
+    "context": "Contexte :",
+    "role": "Mon rôle :",
+    "result": "Résultat :",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "namePlaceholder": "Votre nom",
+    "messagePlaceholder": "Comment puis-je vous aider ?",
+    "send": "Envoyer",
+    "mailSubject": "Message depuis le portfolio",
+    "mailName": "Nom",
+    "mailEmail": "Email",
+    "emailPlaceholder": "votre@email.com"
   }
 }

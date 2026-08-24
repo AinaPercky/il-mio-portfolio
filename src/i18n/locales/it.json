@@ -8,40 +8,40 @@
   "hero": {
     "title": "RAMANOARA Percky",
     "subtitle": "Sviluppatore Web Fullstack | Specialista Lean Management & Project Management",
-    "hook": "Je construis des applications web solides et je pilote des projets avec la rigueur des méthodes Lean — deux façons différentes d'atteindre le même objectif : un résultat qui fonctionne, sans gaspillage.",
-    "shortHook": "Sviluppatore fullstack. Spirito Lean. Scrivo codice e organizzo il percorso per arrivarci.",
-    "cta": "Contattami"
+    "hook": "Creo applicazioni web solide e coordino progetti con il rigore dei metodi Lean — due modi diversi per raggiungere lo stesso obiettivo: un risultato efficace, senza sprechi.",
+    "cta": "Contattami",
+    "greeting": "Ciao, sono"
   },
   "about": {
-    "title": "À propos",
-    "p1": "Développeur web fullstack, formé aussi en génie industriel avec une spécialisation Lean management. Ce double parcours change ma façon de travailler : je ne me contente pas d'écrire du code qui fonctionne, je cherche aussi la solution la plus simple et la plus efficace pour l'équipe et pour l'utilisateur.",
-    "p2": "Du développement de plateformes marocaines de documents administratifs à la conduite d'un chantier Lean dans une usine textile, le fil conducteur reste le même : organiser, simplifier, livrer un résultat concret."
+    "title": "Chi sono",
+    "p1": "Sono uno sviluppatore web fullstack, formato anche in ingegneria industriale con una specializzazione in Lean management. Questo percorso doppio influenza il mio modo di lavorare: non scrivo solo codice funzionante, cerco la soluzione più semplice ed efficace per il team e per l’utente.",
+    "p2": "Dallo sviluppo di piattaforme marocchine per i documenti amministrativi alla guida di un progetto Lean in una fabbrica tessile, il filo conduttore è sempre lo stesso: organizzare, semplificare e ottenere un risultato concreto."
   },
   "services": {
-    "title": "Ce que je fais",
+    "title": "Cosa faccio",
     "items": [
       {
-        "title": "Développement web fullstack",
-        "desc": "Je transforme une idée en application fonctionnelle : interface, logique métier, base de données, mise en ligne. Aussi à l'aise pour partir de zéro que pour optimiser une plateforme existante."
+        "title": "Sviluppo web fullstack",
+        "desc": "Trasformo un’idea in un’applicazione funzionale: interfaccia, logica di business, database e messa online. Mi trovo a mio agio sia partendo da zero sia ottimizzando una piattaforma esistente."
       },
       {
-        "title": "Lean & amélioration continue",
-        "desc": "J'analyse un processus, je repère ce qui bloque, et je propose des solutions concrètes (5S, DMAIC). Une méthode qui marche aussi bien sur une chaîne de production que sur un projet informatique."
+        "title": "Lean e miglioramento continuo",
+        "desc": "Analizzo un processo, individuo ciò che lo blocca e propongo soluzioni concrete (5S, DMAIC). Un metodo utile tanto su una linea produttiva quanto in un progetto software."
       },
       {
-        "title": "Gestion de projet",
-        "desc": "Je découpe un projet en étapes claires, je suis l'avancement, et je m'assure que chaque personne sait ce qu'elle doit faire — en Agile, Scrum ou Kanban."
+        "title": "Gestione dei progetti",
+        "desc": "Divido un progetto in fasi chiare, seguo l’avanzamento e mi assicuro che ognuno sappia cosa fare — con Agile, Scrum o Kanban."
       }
     ]
   },
   "projects": {
-    "title": "Projets",
+    "title": "Progetti",
     "items": [
       {
         "title": "Digidoc",
-        "context": "Plateforme marocaine de gestion de documents administratifs.",
-        "role": "Optimisation des performances, correction de bugs, intégration multilingue, développement de l'interface et de la partie admin.",
-        "result": "Une plateforme plus rapide et plus fiable, accessible à un public multilingue.",
+        "context": "Piattaforma marocchina per la gestione dei documenti amministrativi.",
+        "role": "Ottimizzazione delle prestazioni, correzione dei bug, integrazione multilingue, sviluppo dell’interfaccia e dell’area amministrativa.",
+        "result": "Una piattaforma più veloce e affidabile, accessibile a un pubblico multilingue.",
         "stack": [
           "HTML",
           "CSS",
@@ -50,14 +50,13 @@
           "PHP",
           "MySQL",
           "Git"
-        ],
-        "link": "digidoc.ma"
+        ]
       },
       {
         "title": "Evisa",
-        "context": "Réseau de plateformes pour demander un visa en ligne sur plusieurs pays.",
-        "role": "Optimisation de performance, interfaces mobiles, formulaires, intégration des paiements, gestion de serveurs.",
-        "result": "Parcours de demande de visa fluides, avec paiement en ligne intégré.",
+        "context": "Rete di piattaforme per richiedere visti online in diversi Paesi.",
+        "role": "Ottimizzazione delle prestazioni, interfacce mobile, moduli, integrazione dei pagamenti e gestione dei server.",
+        "result": "Percorsi di richiesta del visto fluidi, con pagamento online integrato.",
         "stack": [
           "HTML",
           "CSS",
@@ -71,9 +70,9 @@
       },
       {
         "title": "MiharyKet",
-        "context": "Application pour connecter les acteurs d'une coopérative agricole, de zéro.",
-        "role": "Conception UML, développement agile, interface et backend, mise en place de triggers.",
-        "result": "Application fonctionnelle livrée de la conception jusqu'au déploiement.",
+        "context": "Applicazione creata da zero per collegare gli attori di una cooperativa agricola.",
+        "role": "Progettazione UML, sviluppo agile, interfaccia e backend, configurazione dei trigger.",
+        "result": "Applicazione funzionale consegnata dalla progettazione alla messa online.",
         "stack": [
           "React",
           "Bootstrap",
@@ -86,10 +85,10 @@
     ]
   },
   "skills": {
-    "title": "Compétences techniques",
+    "title": "Competenze tecniche",
     "categories": [
       {
-        "name": "Langages",
+        "name": "Linguaggi",
         "list": [
           "JavaScript",
           "PHP",
@@ -98,7 +97,7 @@
         ]
       },
       {
-        "name": "Frameworks",
+        "name": "Framework",
         "list": [
           "React JS",
           "Node JS",
@@ -109,14 +108,14 @@
         ]
       },
       {
-        "name": "Bases de données",
+        "name": "Database",
         "list": [
           "MySQL",
           "PostgreSQL"
         ]
       },
       {
-        "name": "Méthodologies",
+        "name": "Metodologie",
         "list": [
           "Agilité",
           "Scrum",
@@ -128,7 +127,7 @@
         ]
       },
       {
-        "name": "Outils",
+        "name": "Strumenti",
         "list": [
           "Git",
           "FileZilla",
@@ -138,39 +137,56 @@
     ]
   },
   "softSkills": {
-    "title": "Ma façon de travailler",
+    "title": "Il mio modo di lavorare",
     "items": [
       {
-        "title": "Leadership de projet",
-        "desc": "Piloter un chantier Lean en autonomie, de l'analyse jusqu'à la mise en œuvre sur le terrain."
+        "title": "Leadership di progetto",
+        "desc": "Guidare un progetto Lean in autonomia, dall’analisi all’attuazione sul campo."
       },
       {
-        "title": "Rigueur",
-        "desc": "La même exigence pour déboguer une plateforme en production ou contrôler un processus."
+        "title": "Rigorosità",
+        "desc": "Applicare la stessa precisione nel correggere una piattaforma in produzione o nel controllare un processo."
       },
       {
-        "title": "Communication",
-        "desc": "Rendre une idée technique claire, pour une équipe comme pour un utilisateur final."
+        "title": "Comunicazione",
+        "desc": "Rendere chiara un’idea tecnica, sia per un team sia per un utente."
       },
       {
-        "title": "Résolution de problèmes",
-        "desc": "Toujours comprendre la cause avant d'agir."
+        "title": "Risoluzione dei problemi",
+        "desc": "Capire sempre la causa prima di agire."
       },
       {
-        "title": "Adaptabilité",
-        "desc": "À l'aise sur des sujets très différents : visas en ligne, documents administratifs, coopérative agricole, industrie textile."
+        "title": "Adattabilità",
+        "desc": "A mio agio in ambiti diversi: visti, documenti amministrativi, cooperative agricole e industria tessile."
       },
       {
-        "title": "Amélioration continue",
-        "desc": "Le réflexe Lean : simplifier plutôt que se contenter du « ça marche »."
+        "title": "Miglioramento continuo",
+        "desc": "Il riflesso Lean: semplificare invece di accontentarsi del “funziona”."
       }
     ]
   },
   "contact": {
-    "title": "Travaillons ensemble",
-    "text": "Un projet web à développer, un processus à optimiser, une équipe à organiser ? Discutons-en.",
+    "title": "Lavoriamo insieme",
+    "text": "Un progetto web da sviluppare, un processo da ottimizzare o un team da organizzare? Parliamone.",
     "email": "ainapercky@gmail.com",
     "phone": "032 96 489 54",
     "location": "Antananarivo, Madagascar"
+  },
+  "labels": {
+    "expertise": "Competenze",
+    "softSkills": "Competenze trasversali",
+    "context": "Contesto:",
+    "role": "Il mio ruolo:",
+    "result": "Risultato:",
+    "name": "Nome",
+    "email": "Email",
+    "message": "Messaggio",
+    "namePlaceholder": "Il tuo nome",
+    "messagePlaceholder": "Come posso aiutarti?",
+    "send": "Invia",
+    "mailSubject": "Messaggio dal portfolio",
+    "mailName": "Nome",
+    "mailEmail": "Email",
+    "emailPlaceholder": "tua@email.com"
   }
 }

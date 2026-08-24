@@ -20,7 +20,7 @@ export const Skills = () => {
               className="mb-12"
             >
               <h2 className="text-sm font-bold tracking-wider text-brand-main uppercase mb-3">
-                Expertise
+                {t.labels.expertise}
               </h2>
               <h3 className="text-3xl font-bold text-brand-dark">
                 {t.skills.title}
@@ -63,7 +63,7 @@ export const Skills = () => {
               className="mb-12"
             >
               <h2 className="text-sm font-bold tracking-wider text-brand-orange uppercase mb-3">
-                Soft Skills
+                {t.labels.softSkills}
               </h2>
               <h3 className="text-3xl font-bold text-brand-dark">
                 {t.softSkills.title}
