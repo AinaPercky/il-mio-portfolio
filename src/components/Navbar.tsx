@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { clsx } from 'clsx';
 import { animate, createScope, stagger } from 'animejs';
 import { useLanguage } from '../context/LanguageContext';
-import type { NavLink } from '../types/content';
+import type { NavLink, SupportedLanguage } from '../types/content';
 import { LanguageSelector } from './LanguageSelector';
 import { MobileMenu } from './MobileMenu';
 
@@ -45,6 +45,41 @@ export const Navbar = () => {
     return () => scope.current?.revert();
   }, []);
 
+  const handleLanguageChange = (nextLanguage: SupportedLanguage) => {
+    setLanguage(nextLanguage);
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const button = root.current?.querySelector<HTMLElement>(`[data-language-button="${nextLanguage}"]`);
+    if (!button) return;
+
+    scope.current?.execute(() => {
+      animate(button, {
+        scale: [1, 1.16, 1.05],
+        duration: 380,
+        ease: 'outBack',
+      });
+    });
+  };
+
+  const handleMenuToggle = () => {
+    setIsOpen((open) => !open);
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const button = root.current?.querySelector<HTMLElement>('[data-mobile-menu-toggle]');
+    if (!button) return;
+
+    scope.current?.execute(() => {
+      animate(button, {
+        rotate: [0, 12, 0],
+        scale: [1, 1.08, 1],
+        duration: 300,
+        ease: 'outQuad',
+      });
+    });
+  };
+
   const navLinks: ReadonlyArray<NavLink> = [
     { href: '#about', label: t.nav.about },
     { href: '#services', label: t.nav.services },
@@ -78,11 +113,12 @@ export const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-1 sm:space-x-4 md:space-x-8">
-          <LanguageSelector language={activeLanguage} onChange={setLanguage} />
+          <LanguageSelector language={activeLanguage} onChange={handleLanguageChange} />
 
           <button
             className="md:hidden text-brand-dark p-0.5"
-            onClick={() => setIsOpen((open) => !open)}
+            data-mobile-menu-toggle
+            onClick={handleMenuToggle}
             aria-label={isOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"

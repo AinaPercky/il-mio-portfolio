@@ -39,7 +39,7 @@ const animateReveal = (elements: HTMLElement[], scrollTarget: HTMLElement, delay
     delay: delay > 0 ? stagger(delay) : 0,
     duration: 650,
     ease: 'outQuad',
-    autoplay: onScroll({ target: scrollTarget, repeat: false, enter: 'bottom-=100' }),
+    autoplay: onScroll({ container: document.body, target: scrollTarget, repeat: false, sync: 'play pause', enter: { target: 'top', container: '88%' } }),
   });
 };
 
@@ -56,7 +56,7 @@ const animateStaggerGroup = (
     delay: stagger(delay),
     duration: 600,
     ease: 'outQuad' as const,
-    autoplay: onScroll({ target: scrollTarget, repeat: false, enter: 'bottom-=100' }),
+    autoplay: onScroll({ container: document.body, target: scrollTarget, repeat: false, sync: 'play pause', enter: { target: 'top', container: '88%' } }),
   };
 
   if (axis === 'x') {

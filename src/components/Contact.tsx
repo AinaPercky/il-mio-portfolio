@@ -13,7 +13,7 @@ export const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const root = useRef<HTMLElement | null>(null);
-  useAnimeReveal({ root, staggerDelay: 100 });
+  const { animateHover } = useAnimeReveal({ root, revealAll: true, staggerDelay: 100 });
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -44,21 +44,35 @@ export const Contact = () => {
               <p className="text-xl text-gray-600 mb-12 max-w-lg">{t.contact.text}</p>
 
               <div className="space-y-8">
-                <a href={`mailto:${t.contact.email}`} className="flex items-center space-x-4 text-brand-dark hover:text-brand-main transition-colors group">
+                <a
+                    href={`mailto:${t.contact.email}`}
+                    className="flex items-center space-x-4 text-brand-dark hover:text-brand-main transition-colors group"
+                    onMouseEnter={(event) => animateHover(event.currentTarget, true)}
+                    onMouseLeave={(event) => animateHover(event.currentTarget, false)}
+                  >
                   <div className="w-14 h-14 rounded-full bg-brand-main/10 flex items-center justify-center group-hover:bg-brand-main group-hover:text-white transition-colors">
                     <Mail className="w-6 h-6" aria-hidden="true" />
                   </div>
                   <span className="text-lg font-medium">{t.contact.email}</span>
                 </a>
 
-                <a href={`tel:${t.contact.phone}`} className="flex items-center space-x-4 text-brand-dark hover:text-brand-main transition-colors group">
+                <a
+                    href={`tel:${t.contact.phone}`}
+                    className="flex items-center space-x-4 text-brand-dark hover:text-brand-main transition-colors group"
+                    onMouseEnter={(event) => animateHover(event.currentTarget, true)}
+                    onMouseLeave={(event) => animateHover(event.currentTarget, false)}
+                  >
                   <div className="w-14 h-14 rounded-full bg-brand-main/10 flex items-center justify-center group-hover:bg-brand-main group-hover:text-white transition-colors">
                     <Phone className="w-6 h-6" aria-hidden="true" />
                   </div>
                   <span className="text-lg font-medium">{t.contact.phone}</span>
                 </a>
 
-                <div className="flex items-center space-x-4 text-brand-dark group cursor-default">
+                <div
+                  className="flex items-center space-x-4 text-brand-dark group cursor-default"
+                  onMouseEnter={(event) => animateHover(event.currentTarget, true)}
+                  onMouseLeave={(event) => animateHover(event.currentTarget, false)}
+                >
                   <div className="w-14 h-14 rounded-full bg-brand-main/10 flex items-center justify-center">
                     <MapPin className="w-6 h-6" aria-hidden="true" />
                   </div>
@@ -113,7 +127,12 @@ export const Contact = () => {
                     placeholder={t.labels.messagePlaceholder}
                   />
                 </div>
-                <button type="submit" className="w-full bg-brand-orange hover:bg-[#e67a00] text-white font-bold py-4 rounded-xl transition-colors shadow-lg">
+                <button
+                  type="submit"
+                  className="w-full bg-brand-orange hover:bg-[#e67a00] text-white font-bold py-4 rounded-xl transition-colors shadow-lg"
+                  onMouseEnter={(event) => animateHover(event.currentTarget, true)}
+                  onMouseLeave={(event) => animateHover(event.currentTarget, false)}
+                >
                   {t.labels.send}
                 </button>
               </form>

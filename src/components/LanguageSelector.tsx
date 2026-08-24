@@ -49,7 +49,7 @@ export const LanguageSelector = ({ language, onChange }: LanguageSelectorProps) 
       <button
         key={code}
         type="button"
-        data-language-button
+        data-language-button={code}
         onClick={() => onChange(code)}
         className={`flex h-7 w-7 sm:h-9 sm:w-9 items-center justify-center rounded-full transition-all ${
           language === code
