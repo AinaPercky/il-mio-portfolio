@@ -42,8 +42,15 @@
         "context": "Plateforme marocaine de gestion de documents administratifs.",
         "role": "Optimisation des performances, correction de bugs, intégration multilingue, développement de l'interface et de la partie admin.",
         "result": "Une plateforme plus rapide et plus fiable, accessible à un public multilingue.",
-        "stack": ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL", "Git"],
-        "image": "/digidoc.png",
+        "stack": [
+          "HTML",
+          "CSS",
+          "Bootstrap",
+          "JavaScript",
+          "PHP",
+          "MySQL",
+          "Git"
+        ],
         "link": "digidoc.ma"
       },
       {
@@ -51,14 +58,30 @@
         "context": "Réseau de plateformes pour demander un visa en ligne sur plusieurs pays.",
         "role": "Optimisation de performance, interfaces mobiles, formulaires, intégration des paiements, gestion de serveurs.",
         "result": "Parcours de demande de visa fluides, avec paiement en ligne intégré.",
-        "stack": ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL", "Git", "FileZilla"]
+        "stack": [
+          "HTML",
+          "CSS",
+          "Bootstrap",
+          "JavaScript",
+          "PHP",
+          "MySQL",
+          "Git",
+          "FileZilla"
+        ]
       },
       {
         "title": "MiharyKet",
         "context": "Application pour connecter les acteurs d'une coopérative agricole, de zéro.",
         "role": "Conception UML, développement agile, interface et backend, mise en place de triggers.",
         "result": "Application fonctionnelle livrée de la conception jusqu'au déploiement.",
-        "stack": ["React", "Bootstrap", "Java", "Spring Boot", "PostgreSQL", "Git"]
+        "stack": [
+          "React",
+          "Bootstrap",
+          "Java",
+          "Spring Boot",
+          "PostgreSQL",
+          "Git"
+        ]
       }
     ]
   },
@@ -67,23 +90,50 @@
     "categories": [
       {
         "name": "Langages",
-        "list": ["JavaScript", "PHP", "Python", "Java"]
+        "list": [
+          "JavaScript",
+          "PHP",
+          "Python",
+          "Java"
+        ]
       },
       {
         "name": "Frameworks",
-        "list": ["React JS", "Node JS", "FastAPI", "Symfony", "Spring Boot", "Kafka"]
+        "list": [
+          "React JS",
+          "Node JS",
+          "FastAPI",
+          "Symfony",
+          "Spring Boot",
+          "Kafka"
+        ]
       },
       {
         "name": "Bases de données",
-        "list": ["MySQL", "PostgreSQL"]
+        "list": [
+          "MySQL",
+          "PostgreSQL"
+        ]
       },
       {
         "name": "Méthodologies",
-        "list": ["Agilité", "Scrum", "Kanban", "UML", "Lean", "5S", "DMAIC"]
+        "list": [
+          "Agilité",
+          "Scrum",
+          "Kanban",
+          "UML",
+          "Lean",
+          "5S",
+          "DMAIC"
+        ]
       },
       {
         "name": "Outils",
-        "list": ["Git", "FileZilla", "Docker"]
+        "list": [
+          "Git",
+          "FileZilla",
+          "Docker"
+        ]
       }
     ]
   },
