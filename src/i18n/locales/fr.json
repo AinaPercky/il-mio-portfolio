@@ -15,7 +15,12 @@
   "about": {
     "title": "À propos",
     "p1": "Développeur web fullstack, formé aussi en génie industriel avec une spécialisation Lean management. Ce double parcours change ma façon de travailler : je ne me contente pas d'écrire du code qui fonctionne, je cherche aussi la solution la plus simple et la plus efficace pour l'équipe et pour l'utilisateur.",
-    "p2": "Du développement de plateformes marocaines de documents administratifs à la conduite d'un chantier Lean dans une usine textile, le fil conducteur reste le même : organiser, simplifier, livrer un résultat concret."
+    "p2": "Du développement de plateformes marocaines de documents administratifs à la conduite d'un chantier Lean dans une usine textile, le fil conducteur reste le même : organiser, simplifier, livrer un résultat concret.",
+    "stats": [
+      "Développement",
+      "Lean Management",
+      "Amélioration continue"
+    ]
   },
   "services": {
     "title": "Ce que je fais",
@@ -188,5 +193,8 @@
     "mailName": "Nom",
     "mailEmail": "Email",
     "emailPlaceholder": "votre@email.com"
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
   }
 }

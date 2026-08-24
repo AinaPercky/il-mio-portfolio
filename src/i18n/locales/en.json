@@ -15,7 +15,12 @@
   "about": {
     "title": "About",
     "p1": "I am a fullstack web developer with a background in industrial engineering and a specialization in Lean management. This combination shapes the way I work: I do not just write code that works; I look for the simplest and most effective solution for the team and the user.",
-    "p2": "From developing Moroccan administrative document platforms to leading a Lean project in a textile factory, the common thread is always the same: organize, simplify and deliver a concrete result."
+    "p2": "From developing Moroccan administrative document platforms to leading a Lean project in a textile factory, the common thread is always the same: organize, simplify and deliver a concrete result.",
+    "stats": [
+      "Development",
+      "Lean management",
+      "Continuous improvement"
+    ]
   },
   "services": {
     "title": "What I Do",
@@ -117,7 +122,7 @@
       {
         "name": "Methods",
         "list": [
-          "Agilité",
+          "Agile",
           "Scrum",
           "Kanban",
           "UML",
@@ -188,5 +193,8 @@
     "mailName": "Name",
     "mailEmail": "Email",
     "emailPlaceholder": "your@email.com"
+  },
+  "footer": {
+    "rights": "All rights reserved."
   }
 }

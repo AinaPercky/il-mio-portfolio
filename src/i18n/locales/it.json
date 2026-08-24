@@ -15,7 +15,12 @@
   "about": {
     "title": "Chi sono",
     "p1": "Sono uno sviluppatore web fullstack, formato anche in ingegneria industriale con una specializzazione in Lean management. Questo percorso doppio influenza il mio modo di lavorare: non scrivo solo codice funzionante, cerco la soluzione più semplice ed efficace per il team e per l’utente.",
-    "p2": "Dallo sviluppo di piattaforme marocchine per i documenti amministrativi alla guida di un progetto Lean in una fabbrica tessile, il filo conduttore è sempre lo stesso: organizzare, semplificare e ottenere un risultato concreto."
+    "p2": "Dallo sviluppo di piattaforme marocchine per i documenti amministrativi alla guida di un progetto Lean in una fabbrica tessile, il filo conduttore è sempre lo stesso: organizzare, semplificare e ottenere un risultato concreto.",
+    "stats": [
+      "Sviluppo",
+      "Lean management",
+      "Miglioramento continuo"
+    ]
   },
   "services": {
     "title": "Cosa faccio",
@@ -117,7 +122,7 @@
       {
         "name": "Metodologie",
         "list": [
-          "Agilité",
+          "Agile",
           "Scrum",
           "Kanban",
           "UML",
@@ -188,5 +193,8 @@
     "mailName": "Nome",
     "mailEmail": "Email",
     "emailPlaceholder": "tua@email.com"
+  },
+  "footer": {
+    "rights": "Tutti i diritti riservati."
   }
 }

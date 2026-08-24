@@ -7,9 +7,9 @@ export const About = () => {
   const { t } = useLanguage();
 
   const stats = [
-    { icon: Code2, label: "Développement", color: "text-brand-main", bg: "bg-brand-main/10" },
-    { icon: Target, label: "Lean Management", color: "text-brand-orange", bg: "bg-brand-orange/10" },
-    { icon: LineChart, label: "Amélioration Continue", color: "text-brand-yellow", bg: "bg-brand-yellow/10" },
+    { icon: Code2, label: t.about.stats[0], color: "text-brand-main", bg: "bg-brand-main/10" },
+    { icon: Target, label: t.about.stats[1], color: "text-brand-orange", bg: "bg-brand-orange/10" },
+    { icon: LineChart, label: t.about.stats[2], color: "text-brand-yellow", bg: "bg-brand-yellow/10" },
   ];
 
   return (

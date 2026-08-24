@@ -15,7 +15,12 @@
   "about": {
     "title": "À propos",
     "p1": "Développeur web fullstack, formé aussi en génie industriel avec une spécialisation Lean management. Ce double parcours change ma façon de travailler : je ne me contente pas d'écrire du code qui fonctionne, je cherche aussi la solution la plus simple et la plus efficace pour l'équipe et pour l'utilisateur.",
-    "p2": "Du développement de plateformes marocaines de documents administratifs à la conduite d'un chantier Lean dans une usine textile, le fil conducteur reste le même : organiser, simplifier, livrer un résultat concret."
+    "p2": "Du développement de plateformes marocaines de documents administratifs à la conduite d'un chantier Lean dans une usine textile, le fil conducteur reste le même : organiser, simplifier, livrer un résultat concret.",
+    "stats": [
+      "Fampandrosoana",
+      "Lean Management",
+      "Fanatsarana mitohy"
+    ]
   },
   "services": {
     "title": "Ce que je fais",
@@ -88,7 +93,7 @@
     "title": "Compétences techniques",
     "categories": [
       {
-        "name": "Langages",
+        "name": "Fiteny",
         "list": [
           "JavaScript",
           "PHP",
@@ -108,16 +113,16 @@
         ]
       },
       {
-        "name": "Bases de données",
+        "name": "Tahiry angona",
         "list": [
           "MySQL",
           "PostgreSQL"
         ]
       },
       {
-        "name": "Méthodologies",
+        "name": "Fomba fiasa",
         "list": [
-          "Agilité",
+          "Agile",
           "Scrum",
           "Kanban",
           "UML",
@@ -127,7 +132,7 @@
         ]
       },
       {
-        "name": "Outils",
+        "name": "Fitaovana",
         "list": [
           "Git",
           "FileZilla",
@@ -188,5 +193,8 @@
     "mailName": "Nom",
     "mailEmail": "Email",
     "emailPlaceholder": "votre@email.com"
+  },
+  "footer": {
+    "rights": "Zo rehetra voatokana."
   }
 }
