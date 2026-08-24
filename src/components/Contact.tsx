@@ -1,10 +1,30 @@
 import React from 'react';
+import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'motion/react';
 import { Mail, MapPin, Phone } from 'lucide-react';
 
 export const Contact = () => {
   const { t } = useLanguage();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const subject = name.trim()
+      ? `Message depuis le portfolio — ${name.trim()}`
+      : 'Message depuis le portfolio';
+    const body = [
+      `Nom : ${name.trim()}`,
+      `Email : ${email.trim()}`,
+      '',
+      message.trim(),
+    ].join('\n');
+
+    window.location.href = `mailto:ainapercky@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
 
   return (
     <section id="contact" className="py-24 bg-gray-50 border-t border-gray-100">
@@ -57,11 +77,16 @@ export const Contact = () => {
               <div className="absolute top-0 right-0 w-64 h-64 bg-brand-main/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-yellow/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3" />
               
-              <form className="relative z-10 space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="relative z-10 space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Nom</label>
                   <input
                     type="text"
+                    name="name"
+                    value={name}
+                    onChange={(event) => setName(event.target.value)}
+                    autoComplete="name"
+                    required
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-brand-main focus:ring-1 focus:ring-brand-main transition-all"
                     placeholder="Votre nom"
                   />
@@ -70,6 +95,11 @@ export const Contact = () => {
                   <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
                   <input
                     type="email"
+                    name="email"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                    autoComplete="email"
+                    required
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-brand-main focus:ring-1 focus:ring-brand-main transition-all"
                     placeholder="votre@email.com"
                   />
@@ -78,12 +108,16 @@ export const Contact = () => {
                   <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
                   <textarea
                     rows={4}
+                    name="message"
+                    value={message}
+                    onChange={(event) => setMessage(event.target.value)}
+                    required
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-brand-main focus:ring-1 focus:ring-brand-main transition-all resize-none"
                     placeholder="Comment puis-je vous aider ?"
                   />
                 </div>
                 <button
-                  type="button"
+                  type="submit"
                   className="w-full bg-brand-orange hover:bg-[#e67a00] text-white font-bold py-4 rounded-xl transition-colors shadow-lg"
                 >
                   Envoyer
