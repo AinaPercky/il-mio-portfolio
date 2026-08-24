@@ -48,10 +48,10 @@ export const Contact = () => {
   };
 
   return (
-    <section ref={root} id="contact" className="py-24 bg-gray-50 border-t border-gray-100">
+    <section ref={root} id="contact" className="py-16 sm:py-24 bg-gray-50 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="bg-white rounded-3xl p-8 lg:p-16 shadow-sm border border-gray-100">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="bg-white rounded-3xl p-5 sm:p-8 lg:p-16 shadow-sm border border-gray-100">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div data-reveal>
               <h2 className="text-3xl lg:text-5xl font-bold text-brand-dark mb-6 leading-tight">{t.contact.title}</h2>
               <p className="text-xl text-gray-600 mb-12 max-w-lg">{t.contact.text}</p>
@@ -80,7 +80,7 @@ export const Contact = () => {
               </div>
             </div>
 
-            <div data-reveal className="bg-brand-dark rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden">
+            <div data-reveal className="bg-brand-dark rounded-3xl p-6 sm:p-8 lg:p-12 text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-brand-main/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-yellow/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3" />
 

@@ -16,7 +16,7 @@ const languages: Array<{ code: SupportedLanguage; name: string }> = [
 const FlagIcon = ({ code }: { code: SupportedLanguage }) => {
   if (code === 'fr') {
     return (
-      <svg viewBox="0 0 30 20" aria-hidden="true" className="h-4 w-6 rounded-[2px] shadow-sm">
+      <svg viewBox="0 0 30 20" aria-hidden="true" className="h-3.5 w-5 sm:h-4 sm:w-6 rounded-[2px] shadow-sm">
         <rect width="10" height="20" fill="#0055A4" />
         <rect x="10" width="10" height="20" fill="#FFFFFF" />
         <rect x="20" width="10" height="20" fill="#EF4135" />
@@ -26,7 +26,7 @@ const FlagIcon = ({ code }: { code: SupportedLanguage }) => {
 
   if (code === 'it') {
     return (
-      <svg viewBox="0 0 30 20" aria-hidden="true" className="h-4 w-6 rounded-[2px] shadow-sm">
+      <svg viewBox="0 0 30 20" aria-hidden="true" className="h-3.5 w-5 sm:h-4 sm:w-6 rounded-[2px] shadow-sm">
         <rect width="10" height="20" fill="#009246" />
         <rect x="10" width="10" height="20" fill="#FFFFFF" />
         <rect x="20" width="10" height="20" fill="#CE2B37" />
@@ -35,7 +35,7 @@ const FlagIcon = ({ code }: { code: SupportedLanguage }) => {
   }
 
   return (
-    <svg viewBox="0 0 60 40" aria-hidden="true" className="h-4 w-6 rounded-[2px] shadow-sm">
+    <svg viewBox="0 0 60 40" aria-hidden="true" className="h-3.5 w-5 sm:h-4 sm:w-6 rounded-[2px] shadow-sm">
       <rect width="60" height="40" fill="#012169" />
       <path d="M0 0 60 40M60 0 0 40" stroke="#FFFFFF" strokeWidth="9" />
       <path d="M0 0 60 40M60 0 0 40" stroke="#C8102E" strokeWidth="4" />
@@ -97,8 +97,8 @@ export const Navbar = () => {
         scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
       )}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a href="#" className="text-xl font-bold text-brand-dark tracking-tight">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 flex items-center justify-between">
+        <a href="#" className="text-base sm:text-xl font-bold text-brand-dark tracking-tight whitespace-nowrap">
           RAMANOARA <span className="text-brand-main">Percky</span>
         </a>
 
@@ -116,7 +116,7 @@ export const Navbar = () => {
         </div>
 
         {/* Right Section: Language Selector & Mobile Toggle */}
-        <div className="flex items-center space-x-4 md:space-x-8">
+        <div className="flex items-center space-x-1 sm:space-x-4 md:space-x-8">
           {/* Language Selector */}
           <div className="flex items-center gap-1" aria-label="Choisir la langue">
             {languages.map(({ code, name }) => (
@@ -126,7 +126,7 @@ export const Navbar = () => {
                 data-language-button
                 onClick={() => setLanguage(code)}
                 className={clsx(
-                  'flex h-9 w-9 items-center justify-center rounded-full text-xl transition-all',
+                  'flex h-7 w-7 sm:h-9 sm:w-9 items-center justify-center rounded-full transition-all',
                   language === code
                     ? 'bg-brand-main/15 ring-2 ring-brand-main scale-105'
                     : 'opacity-60 hover:bg-gray-100 hover:opacity-100'
@@ -142,10 +142,13 @@ export const Navbar = () => {
 
           {/* Mobile Toggle */}
           <button
-            className="md:hidden text-brand-dark"
+            className="md:hidden text-brand-dark p-0.5"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
@@ -157,6 +160,7 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
+            id="mobile-menu"
             className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
           >
             <div className="px-6 py-4 flex flex-col space-y-4">

@@ -54,11 +54,11 @@ export const Skills = () => {
   }, []);
 
   return (
-    <section ref={root} id="skills" className="py-24 bg-white">
+    <section ref={root} id="skills" className="py-16 sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           <div>
-            <div data-reveal className="mb-12">
+            <div data-reveal className="mb-8 sm:mb-12">
               <h2 className="text-sm font-bold tracking-wider text-brand-main uppercase mb-3">{t.labels.expertise}</h2>
               <h3 className="text-3xl font-bold text-brand-dark">{t.skills.title}</h3>
             </div>
@@ -80,7 +80,7 @@ export const Skills = () => {
           </div>
 
           <div>
-            <div data-reveal className="mb-12">
+            <div data-reveal className="mb-8 sm:mb-12">
               <h2 className="text-sm font-bold tracking-wider text-brand-orange uppercase mb-3">{t.labels.softSkills}</h2>
               <h3 className="text-3xl font-bold text-brand-dark">{t.softSkills.title}</h3>
             </div>

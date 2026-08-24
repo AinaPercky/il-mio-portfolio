@@ -60,9 +60,9 @@ export const About = () => {
   };
 
   return (
-    <section ref={root} id="about" className="py-24 bg-gray-50">
+    <section ref={root} id="about" className="py-16 sm:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div data-reveal className="grid lg:grid-cols-2 gap-16 items-center">
+        <div data-reveal className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
             <h2 className="text-sm font-bold tracking-wider text-brand-main uppercase mb-3">
               {t.nav.about}
@@ -85,7 +85,7 @@ export const About = () => {
                   data-card
                   onMouseEnter={(event) => handleCardHover(event.currentTarget, true)}
                   onMouseLeave={(event) => handleCardHover(event.currentTarget, false)}
-                  className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-6 hover:shadow-md transition-shadow"
+                  className="bg-white p-5 sm:p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-6 hover:shadow-md transition-shadow"
                 >
                   <div className={`p-4 rounded-xl ${stat.bg}`}>
                     <Icon className={`w-8 h-8 ${stat.color}`} />

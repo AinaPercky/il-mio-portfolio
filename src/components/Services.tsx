@@ -61,9 +61,9 @@ export const Services = () => {
   };
 
   return (
-    <section ref={root} id="services" className="py-24 bg-white">
+    <section ref={root} id="services" className="py-16 sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div data-reveal className="text-center max-w-3xl mx-auto mb-16">
+        <div data-reveal className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <h2 className="text-sm font-bold tracking-wider text-brand-main uppercase mb-3">
             {t.labels.expertise}
           </h2>
@@ -81,7 +81,7 @@ export const Services = () => {
                 data-card
                 onMouseEnter={(event) => handleCardHover(event.currentTarget, true)}
                 onMouseLeave={(event) => handleCardHover(event.currentTarget, false)}
-                className="group p-8 rounded-3xl bg-gray-50 hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-xl transition-all duration-300"
+                className="group p-6 sm:p-8 rounded-3xl bg-gray-50 hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-xl transition-all duration-300"
               >
                 <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 ${colorClass} transition-transform group-hover:scale-110`}>
                   <Icon className="w-7 h-7" />
