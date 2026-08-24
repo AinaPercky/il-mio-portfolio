@@ -1,57 +1,18 @@
-import React, { useEffect, useRef } from 'react';
-import { useLanguage } from '../context/LanguageContext';
+import { useRef } from 'react';
 import { CheckCircle2 } from 'lucide-react';
-import { animate, createScope, onScroll, stagger } from 'animejs';
+import { useLanguage } from '../context/LanguageContext';
+import { useAnimeReveal } from '../hooks/useAnimeReveal';
+import type { StaggerGroup } from '../hooks/useAnimeReveal';
+
+const skillsAnimationGroups: ReadonlyArray<StaggerGroup> = [
+  { rootSelector: '[data-categories]', itemSelector: '[data-category]', delay: 85 },
+  { rootSelector: '[data-soft-skills]', itemSelector: '[data-soft-skill]', delay: 75, axis: 'x' },
+];
 
 export const Skills = () => {
   const { t } = useLanguage();
   const root = useRef<HTMLElement | null>(null);
-  const scope = useRef<ReturnType<typeof createScope> | null>(null);
-
-  useEffect(() => {
-    if (!root.current || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    scope.current = createScope({ root }).add(() => {
-      const headings = root.current?.querySelectorAll<HTMLElement>('[data-reveal]');
-      const categories = root.current?.querySelectorAll<HTMLElement>('[data-category]');
-      const softSkills = root.current?.querySelectorAll<HTMLElement>('[data-soft-skill]');
-
-      if (headings?.length) {
-        animate(headings, {
-          opacity: [0, 1],
-          translateY: ['1rem', '0rem'],
-          delay: stagger(100),
-          duration: 650,
-          ease: 'outQuad',
-          autoplay: onScroll({ target: root.current!, repeat: false, enter: 'bottom-=100' }),
-        });
-      }
-
-      if (categories?.length) {
-        animate(categories, {
-          opacity: [0, 1],
-          translateY: ['1rem', '0rem'],
-          delay: stagger(85),
-          duration: 600,
-          ease: 'outQuad',
-          autoplay: onScroll({ target: root.current!, repeat: false, enter: 'bottom-=100' }),
-        });
-      }
-
-      if (softSkills?.length) {
-        animate(softSkills, {
-          opacity: [0, 1],
-          translateX: ['1rem', '0rem'],
-          delay: stagger(75),
-          duration: 600,
-          ease: 'outQuad',
-          autoplay: onScroll({ target: root.current!, repeat: false, enter: 'bottom-=100' }),
-        });
-      }
-    });
-
-    return () => scope.current?.revert();
-  }, []);
+  useAnimeReveal({ root, revealAll: true, revealDelay: 100, staggerGroups: skillsAnimationGroups });
 
   return (
     <section ref={root} id="skills" className="py-16 sm:py-24 bg-white">
@@ -63,7 +24,7 @@ export const Skills = () => {
               <h3 className="text-3xl font-bold text-brand-dark">{t.skills.title}</h3>
             </div>
 
-            <div className="space-y-8">
+            <div data-categories className="space-y-8">
               {t.skills.categories.map((category, index) => (
                 <div key={index} data-category>
                   <h4 className="text-lg font-semibold text-brand-dark mb-4 border-b border-gray-100 pb-2">{category.name}</h4>
@@ -85,7 +46,7 @@ export const Skills = () => {
               <h3 className="text-3xl font-bold text-brand-dark">{t.softSkills.title}</h3>
             </div>
 
-            <div className="space-y-6">
+            <div data-soft-skills className="space-y-6">
               {t.softSkills.items.map((item, index) => (
                 <div key={index} data-soft-skill className="flex space-x-4">
                   <div className="flex-shrink-0 mt-1">

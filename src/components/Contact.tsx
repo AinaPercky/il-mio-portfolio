@@ -1,7 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useLanguage } from '../context/LanguageContext';
+import { useRef, useState } from 'react';
+import type { FormEvent } from 'react';
 import { Mail, MapPin, Phone } from 'lucide-react';
-import { animate, createScope, onScroll, stagger } from 'animejs';
+import { useLanguage } from '../context/LanguageContext';
+import { useAnimeReveal } from '../hooks/useAnimeReveal';
+import { buildMailtoUrl } from '../lib/mailto';
+
+const CONTACT_EMAIL = 'ainapercky@gmail.com';
 
 export const Contact = () => {
   const { t } = useLanguage();
@@ -9,42 +13,25 @@ export const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const root = useRef<HTMLElement | null>(null);
-  const scope = useRef<ReturnType<typeof createScope> | null>(null);
+  useAnimeReveal({ root, staggerDelay: 100 });
 
-  useEffect(() => {
-    if (!root.current || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    scope.current = createScope({ root }).add(() => {
-      const columns = root.current?.querySelectorAll<HTMLElement>('[data-reveal]');
-      if (!columns?.length) return;
-
-      animate(columns, {
-        opacity: [0, 1],
-        translateY: ['1rem', '0rem'],
-        delay: stagger(100),
-        duration: 650,
-        ease: 'outQuad',
-        autoplay: onScroll({ target: root.current!, repeat: false, enter: 'bottom-=100' }),
-      });
-    });
-
-    return () => scope.current?.revert();
-  }, []);
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const subject = name.trim()
-      ? `${t.labels.mailSubject} — ${name.trim()}`
-      : t.labels.mailSubject;
+    const trimmedName = name.trim();
+    const subject = trimmedName ? `${t.labels.mailSubject} — ${trimmedName}` : t.labels.mailSubject;
     const body = [
-      `${t.labels.mailName} : ${name.trim()}`,
+      `${t.labels.mailName} : ${trimmedName}`,
       `${t.labels.mailEmail} : ${email.trim()}`,
       '',
       message.trim(),
     ].join('\n');
 
-    window.location.href = `mailto:ainapercky@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = buildMailtoUrl({
+      recipient: CONTACT_EMAIL,
+      subject,
+      body,
+    });
   };
 
   return (
@@ -59,21 +46,21 @@ export const Contact = () => {
               <div className="space-y-8">
                 <a href={`mailto:${t.contact.email}`} className="flex items-center space-x-4 text-brand-dark hover:text-brand-main transition-colors group">
                   <div className="w-14 h-14 rounded-full bg-brand-main/10 flex items-center justify-center group-hover:bg-brand-main group-hover:text-white transition-colors">
-                    <Mail className="w-6 h-6" />
+                    <Mail className="w-6 h-6" aria-hidden="true" />
                   </div>
                   <span className="text-lg font-medium">{t.contact.email}</span>
                 </a>
 
                 <a href={`tel:${t.contact.phone}`} className="flex items-center space-x-4 text-brand-dark hover:text-brand-main transition-colors group">
                   <div className="w-14 h-14 rounded-full bg-brand-main/10 flex items-center justify-center group-hover:bg-brand-main group-hover:text-white transition-colors">
-                    <Phone className="w-6 h-6" />
+                    <Phone className="w-6 h-6" aria-hidden="true" />
                   </div>
                   <span className="text-lg font-medium">{t.contact.phone}</span>
                 </a>
 
                 <div className="flex items-center space-x-4 text-brand-dark group cursor-default">
                   <div className="w-14 h-14 rounded-full bg-brand-main/10 flex items-center justify-center">
-                    <MapPin className="w-6 h-6" />
+                    <MapPin className="w-6 h-6" aria-hidden="true" />
                   </div>
                   <span className="text-lg font-medium">{t.contact.location}</span>
                 </div>
@@ -81,8 +68,8 @@ export const Contact = () => {
             </div>
 
             <div data-reveal className="bg-brand-dark rounded-3xl p-6 sm:p-8 lg:p-12 text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-main/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-yellow/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-main/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" aria-hidden="true" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-yellow/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3" aria-hidden="true" />
 
               <form className="relative z-10 space-y-6" onSubmit={handleSubmit}>
                 <div>
