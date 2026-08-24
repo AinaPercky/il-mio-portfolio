@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { clsx } from 'clsx';
+import { animate, createScope, stagger } from 'animejs';
 
 type SupportedLanguage = 'fr' | 'it' | 'en';
 
@@ -48,6 +49,8 @@ export const Navbar = () => {
   const { language, setLanguage, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const root = useRef<HTMLElement | null>(null);
+  const scope = useRef<ReturnType<typeof createScope> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,6 +58,28 @@ export const Navbar = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!root.current || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    scope.current = createScope({ root }).add(() => {
+      animate(root.current!, {
+        opacity: [0, 1],
+        translateY: ['-0.75rem', '0rem'],
+        duration: 650,
+        ease: 'outQuad',
+      });
+      animate(root.current!.querySelectorAll('[data-language-button]'), {
+        opacity: [0, 1],
+        translateY: ['-0.5rem', '0rem'],
+        delay: stagger(60),
+        duration: 500,
+        ease: 'outQuad',
+      });
+    });
+
+    return () => scope.current?.revert();
   }, []);
 
   const navLinks = [
@@ -66,6 +91,7 @@ export const Navbar = () => {
 
   return (
     <nav
+      ref={root}
       className={clsx(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
@@ -97,6 +123,7 @@ export const Navbar = () => {
               <button
                 key={code}
                 type="button"
+                data-language-button
                 onClick={() => setLanguage(code)}
                 className={clsx(
                   'flex h-9 w-9 items-center justify-center rounded-full text-xl transition-all',

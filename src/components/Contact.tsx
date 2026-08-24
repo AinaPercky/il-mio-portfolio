@@ -1,14 +1,35 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { motion } from 'motion/react';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import { animate, createScope, onScroll, stagger } from 'animejs';
 
 export const Contact = () => {
   const { t } = useLanguage();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const root = useRef<HTMLElement | null>(null);
+  const scope = useRef<ReturnType<typeof createScope> | null>(null);
+
+  useEffect(() => {
+    if (!root.current || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    scope.current = createScope({ root }).add(() => {
+      const columns = root.current?.querySelectorAll<HTMLElement>('[data-reveal]');
+      if (!columns?.length) return;
+
+      animate(columns, {
+        opacity: [0, 1],
+        translateY: ['1rem', '0rem'],
+        delay: stagger(100),
+        duration: 650,
+        ease: 'outQuad',
+        autoplay: onScroll({ target: root.current!, repeat: false, enter: 'bottom-=100' }),
+      });
+    });
+
+    return () => scope.current?.revert();
+  }, []);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -27,22 +48,13 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gray-50 border-t border-gray-100">
+    <section ref={root} id="contact" className="py-24 bg-gray-50 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
         <div className="bg-white rounded-3xl p-8 lg:p-16 shadow-sm border border-gray-100">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl lg:text-5xl font-bold text-brand-dark mb-6 leading-tight">
-                {t.contact.title}
-              </h2>
-              <p className="text-xl text-gray-600 mb-12 max-w-lg">
-                {t.contact.text}
-              </p>
+            <div data-reveal>
+              <h2 className="text-3xl lg:text-5xl font-bold text-brand-dark mb-6 leading-tight">{t.contact.title}</h2>
+              <p className="text-xl text-gray-600 mb-12 max-w-lg">{t.contact.text}</p>
 
               <div className="space-y-8">
                 <a href={`mailto:${t.contact.email}`} className="flex items-center space-x-4 text-brand-dark hover:text-brand-main transition-colors group">
@@ -51,7 +63,7 @@ export const Contact = () => {
                   </div>
                   <span className="text-lg font-medium">{t.contact.email}</span>
                 </a>
-                
+
                 <a href={`tel:${t.contact.phone}`} className="flex items-center space-x-4 text-brand-dark hover:text-brand-main transition-colors group">
                   <div className="w-14 h-14 rounded-full bg-brand-main/10 flex items-center justify-center group-hover:bg-brand-main group-hover:text-white transition-colors">
                     <Phone className="w-6 h-6" />
@@ -66,17 +78,12 @@ export const Contact = () => {
                   <span className="text-lg font-medium">{t.contact.location}</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-brand-dark rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden"
-            >
+            <div data-reveal className="bg-brand-dark rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-brand-main/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-yellow/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3" />
-              
+
               <form className="relative z-10 space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="contact-name" className="block text-sm font-medium text-gray-300 mb-2">{t.labels.name}</label>
@@ -119,15 +126,11 @@ export const Contact = () => {
                     placeholder={t.labels.messagePlaceholder}
                   />
                 </div>
-                <button
-                  type="submit"
-                  className="w-full bg-brand-orange hover:bg-[#e67a00] text-white font-bold py-4 rounded-xl transition-colors shadow-lg"
-                >
+                <button type="submit" className="w-full bg-brand-orange hover:bg-[#e67a00] text-white font-bold py-4 rounded-xl transition-colors shadow-lg">
                   {t.labels.send}
                 </button>
               </form>
-            </motion.div>
-
+            </div>
           </div>
         </div>
       </div>
