@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "about": "À propos",
+    "services": "Ce que je fais",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "RAMANOARA Percky",
+    "subtitle": "Développeur Web Fullstack | Spécialiste Lean Management & Gestion de projet",
+    "hook": "Je construis des applications web solides et je pilote des projets avec la rigueur des méthodes Lean — deux façons différentes d'atteindre le même objectif : un résultat qui fonctionne, sans gaspillage.",
+    "shortHook": "Développeur fullstack. Esprit Lean. Je code des solutions, j'organise le chemin pour y arriver.",
+    "cta": "Me contacter"
+  },
+  "about": {
+    "title": "À propos",
+    "p1": "Développeur web fullstack, formé aussi en génie industriel avec une spécialisation Lean management. Ce double parcours change ma façon de travailler : je ne me contente pas d'écrire du code qui fonctionne, je cherche aussi la solution la plus simple et la plus efficace pour l'équipe et pour l'utilisateur.",
+    "p2": "Du développement de plateformes marocaines de documents administratifs à la conduite d'un chantier Lean dans une usine textile, le fil conducteur reste le même : organiser, simplifier, livrer un résultat concret."
+  },
+  "services": {
+    "title": "Ce que je fais",
+    "items": [
+      {
+        "title": "Développement web fullstack",
+        "desc": "Je transforme une idée en application fonctionnelle : interface, logique métier, base de données, mise en ligne. Aussi à l'aise pour partir de zéro que pour optimiser une plateforme existante."
+      },
+      {
+        "title": "Lean & amélioration continue",
+        "desc": "J'analyse un processus, je repère ce qui bloque, et je propose des solutions concrètes (5S, DMAIC). Une méthode qui marche aussi bien sur une chaîne de production que sur un projet informatique."
+      },
+      {
+        "title": "Gestion de projet",
+        "desc": "Je découpe un projet en étapes claires, je suis l'avancement, et je m'assure que chaque personne sait ce qu'elle doit faire — en Agile, Scrum ou Kanban."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projets",
+    "items": [
+      {
+        "title": "Digidoc",
+        "context": "Plateforme marocaine de gestion de documents administratifs.",
+        "role": "Optimisation des performances, correction de bugs, intégration multilingue, développement de l'interface et de la partie admin.",
+        "result": "Une plateforme plus rapide et plus fiable, accessible à un public multilingue.",
+        "stack": ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL", "Git"],
+        "image": "/digidoc.png",
+        "link": "digidoc.ma"
+      },
+      {
+        "title": "Evisa",
+        "context": "Réseau de plateformes pour demander un visa en ligne sur plusieurs pays.",
+        "role": "Optimisation de performance, interfaces mobiles, formulaires, intégration des paiements, gestion de serveurs.",
+        "result": "Parcours de demande de visa fluides, avec paiement en ligne intégré.",
+        "stack": ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL", "Git", "FileZilla"]
+      },
+      {
+        "title": "MiharyKet",
+        "context": "Application pour connecter les acteurs d'une coopérative agricole, de zéro.",
+        "role": "Conception UML, développement agile, interface et backend, mise en place de triggers.",
+        "result": "Application fonctionnelle livrée de la conception jusqu'au déploiement.",
+        "stack": ["React", "Bootstrap", "Java", "Spring Boot", "PostgreSQL", "Git"]
+      }
+    ]
+  },
+  "skills": {
+    "title": "Compétences techniques",
+    "categories": [
+      {
+        "name": "Langages",
+        "list": ["JavaScript", "PHP", "Python", "Java"]
+      },
+      {
+        "name": "Frameworks",
+        "list": ["React JS", "Node JS", "FastAPI", "Symfony", "Spring Boot", "Kafka"]
+      },
+      {
+        "name": "Bases de données",
+        "list": ["MySQL", "PostgreSQL"]
+      },
+      {
+        "name": "Méthodologies",
+        "list": ["Agilité", "Scrum", "Kanban", "UML", "Lean", "5S", "DMAIC"]
+      },
+      {
+        "name": "Outils",
+        "list": ["Git", "FileZilla", "Docker"]
+      }
+    ]
+  },
+  "softSkills": {
+    "title": "Ma façon de travailler",
+    "items": [
+      {
+        "title": "Leadership de projet",
+        "desc": "Piloter un chantier Lean en autonomie, de l'analyse jusqu'à la mise en œuvre sur le terrain."
+      },
+      {
+        "title": "Rigueur",
+        "desc": "La même exigence pour déboguer une plateforme en production ou contrôler un processus."
+      },
+      {
+        "title": "Communication",
+        "desc": "Rendre une idée technique claire, pour une équipe comme pour un utilisateur final."
+      },
+      {
+        "title": "Résolution de problèmes",
+        "desc": "Toujours comprendre la cause avant d'agir."
+      },
+      {
+        "title": "Adaptabilité",
+        "desc": "À l'aise sur des sujets très différents : visas en ligne, documents administratifs, coopérative agricole, industrie textile."
+      },
+      {
+        "title": "Amélioration continue",
+        "desc": "Le réflexe Lean : simplifier plutôt que se contenter du « ça marche »."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Travaillons ensemble",
+    "text": "Un projet web à développer, un processus à optimiser, une équipe à organiser ? Discutons-en.",
+    "email": "ainapercky@gmail.com",
+    "phone": "032 96 489 54",
+    "location": "Antananarivo, Madagascar"
+  }
+}
